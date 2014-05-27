@@ -11,10 +11,6 @@
     },
     baseUrl: '/code/js',
     shim: {
-      'knockout_hammer': {
-        deps: ['hammer', 'knockout'],
-        exports: 'hammer'
-      },
       'bootstrap': {
         deps: ['jquery'],
         exports: 'jQuery'

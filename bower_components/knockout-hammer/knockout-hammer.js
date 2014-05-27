@@ -7,7 +7,7 @@
 * Usage: data-bind="hmHold: holdHandlerFn, hmOptions: { hold_timeout: 400 }"
 * http://jsfiddle.net/9AA7U/1/
  */
-define(["knockout"], function(ko) {
+define(["knockout", "hammer"], function(ko, Hammer) {
   return ['hold', 'tap', 'doubletap', 'drag', 'dragstart', 'dragend', 'dragup', 'dragdown', 'dragleft', 'dragright', 'swipe', 'swipeup', 'swipedown', 'swipeleft', 'swiperight', 'transform', 'transformstart', 'transformend', 'rotate', 'pinch', 'pinchin', 'pinchout', 'touch', 'release'].forEach(function(gesture) {
     return ko.bindingHandlers["hm" + (gesture[0].toUpperCase()) + (gesture.slice(1).toLowerCase())] = {
       init: function(element, valueAccessor, allBindingsAccessor, data) {

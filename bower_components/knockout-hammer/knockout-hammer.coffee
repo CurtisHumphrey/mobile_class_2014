@@ -6,7 +6,7 @@
 * http://jsfiddle.net/9AA7U/1/
 ###
 
-define ["knockout"], (ko) ->
+define ["knockout", "hammer"], (ko, Hammer) ->
     [
         'hold',
         'tap',
