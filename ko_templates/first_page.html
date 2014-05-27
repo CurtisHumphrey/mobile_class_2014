@@ -5,19 +5,19 @@
   <div class="form-group">
     <label for="washer_time" class="col-xs-6 control-label">Washer Time</label>
     <div class="col-xs-6">
-      <input type="text" class="form-control" id="washer_time" placeholder="0:40">
+      <select class="form-control" data-bind="options: washer_options, optionsText: 'name', optionsValue: 'minutes', value: washer_time"></select>
     </div>
   </div>
   <div class="form-group">
     <label for="dryer_time" class="col-xs-6 control-label">Dryer Time</label>
     <div class="col-xs-6">
-      <input type="text" class="form-control" id="dryer_time" placeholder="1:00">
+      <select class="form-control" data-bind="options: dryer_options, optionsText: 'name', optionsValue: 'minutes', value: dryer_time"></select>
     </div>
   </div>
   <div class="form-group">
     <label for="snooze_time" class="col-xs-6 control-label">Snooze Time</label>
     <div class="col-xs-6">
-      <input type="text" class="form-control" id="snooze_time" placeholder="0:10">
+      <select class="form-control" data-bind="options: snooze_options, optionsText: 'name', optionsValue: 'minutes', value: snooze_time"></select>
     </div>
   </div>
 </form>
