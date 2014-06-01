@@ -9,7 +9,7 @@ define (require) ->
     ""+h+":"+m
 
 
-  class Main_VM
+  class Settings_VM
     constructor: ->
       @washer_options = ko.observableArray []
       @dryer_options  = ko.observableArray []

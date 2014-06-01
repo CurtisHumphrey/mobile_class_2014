@@ -2,7 +2,7 @@
   var __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
 
   define(function(require) {
-    var $, Main_VM, ToHMM, ko;
+    var $, Settings_VM, ToHMM, ko;
     ko = require('knockout');
     $ = require("jquery");
     ToHMM = function(minutes) {
@@ -14,8 +14,8 @@
       }
       return "" + h + ":" + m;
     };
-    return Main_VM = (function() {
-      function Main_VM() {
+    return Settings_VM = (function() {
+      function Settings_VM() {
         this.Finish_Time = __bind(this.Finish_Time, this);
         var minutes, options, _i, _j, _k, _ref, _ref1;
         this.washer_options = ko.observableArray([]);
@@ -64,11 +64,11 @@
         return;
       }
 
-      Main_VM.prototype.Finish_Time = function(d, e) {
+      Settings_VM.prototype.Finish_Time = function(d, e) {
         this.swipe_value(!this.swipe_value());
       };
 
-      return Main_VM;
+      return Settings_VM;
 
     })();
   });
