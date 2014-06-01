@@ -1,4 +1,6 @@
 (function() {
+  var __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
+
   define(function(require) {
     var $, Main_VM, ToHMM, ko;
     ko = require('knockout');
@@ -14,6 +16,7 @@
     };
     return Main_VM = (function() {
       function Main_VM() {
+        this.Finish_Time = __bind(this.Finish_Time, this);
         var minutes, options, _i, _j, _k, _ref, _ref1;
         this.washer_options = ko.observableArray([]);
         this.dryer_options = ko.observableArray([]);
@@ -48,8 +51,22 @@
         this.washer_time.subscribe(function(nV) {
           return console.log(nV);
         });
+        this.swipe_value = ko.observable(false);
+        this.swipe_text = ko.computed((function(_this) {
+          return function() {
+            if (_this.swipe_value()) {
+              return "Finished!";
+            } else {
+              return "Swipe to finish";
+            }
+          };
+        })(this));
         return;
       }
+
+      Main_VM.prototype.Finish_Time = function(d, e) {
+        this.swipe_value(!this.swipe_value());
+      };
 
       return Main_VM;
 

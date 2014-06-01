@@ -41,4 +41,17 @@ define (require) ->
       @snooze_time = ko.observable 10
 
       @washer_time.subscribe (nV) -> console.log nV
+
+      @swipe_value = ko.observable false
+      @swipe_text = ko.computed =>
+        if @swipe_value()
+          "Finished!"
+        else
+          "Swipe to finish"
+
+
+      return
+
+    Finish_Time: (d, e) =>
+      @swipe_value  !@swipe_value()
       return

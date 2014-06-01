@@ -20,4 +20,10 @@
       <select class="form-control" data-bind="options: snooze_options, optionsText: 'name', optionsValue: 'minutes', value: snooze_time"></select>
     </div>
   </div>
+
+  <div class="form-group" data-bind="hmDragstart: Finish_Time">
+    <label for="snooze_time" class="col-xs-6 control-label">Alarm</label>
+    <div class="col-xs-6" data-bind="text: swipe_text">
+    </div>
+  </div>
 </form>
