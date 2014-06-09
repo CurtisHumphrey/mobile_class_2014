@@ -1,0 +1,36 @@
+@image_base: "../../images";
+
+#timers
+{
+  .machines
+  {
+    margin-top: 40px;
+  }
+  .machine
+  {
+    height: 100px;
+    background-size: 100% auto;
+    background-repeat:no-repeat;
+    text-align: center;
+  
+    &.washer 
+    {
+      background-image: url("@{image_base}/washer_empty.png");
+    }
+    &.dryer 
+    {
+      background-image: url("@{image_base}/dryer.png");
+    }
+  }
+
+  .times
+  {
+    .washer, .dryer
+    {
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+      padding: 10px 0 0 0;
+    }
+  }
+}

@@ -7,13 +7,18 @@
       jquery: "../../bower_components/jquery/dist/jquery",
       bootstrap: "../../bower_components/bootstrap/dist/js/bootstrap",
       hammer: "../../bower_components/hammerjs/hammer",
-      knockout_hammer: "../../bower_components/knockout-hammer/knockout-hammer"
+      knockout_hammer: "../../bower_components/knockout-hammer/knockout-hammer",
+      morf: "../../bower_components/kox_morf/morf",
+      kox_morf: "../../bower_components/kox_morf/kox_morf"
     },
     baseUrl: '/code/js',
     shim: {
       'bootstrap': {
         deps: ['jquery'],
         exports: 'jQuery'
+      },
+      'morf': {
+        exports: 'Morf'
       }
     }
   });
