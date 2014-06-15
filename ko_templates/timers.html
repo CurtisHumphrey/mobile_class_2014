@@ -1,11 +1,11 @@
 <h3>Timers</h3>
 <div class="container-fluid" id="timers">
   <div class="row machines">
-    <div class="col-xs-4 col-xs-offset-1 machine washer"></div>
+    <div class="col-xs-4 col-xs-offset-1 machine washer" data-bind="morf: washer.effect, click: Tap_Washer"></div>
     <div class="col-xs-4 col-xs-offset-2 machine dryer"></div>
   </div>
   <div class="row times">
-    <div class="col-xs-4 col-xs-offset-1 washer" data-bind="text: washer_time">
+    <div class="col-xs-4 col-xs-offset-1 washer" data-bind="text: washer_time, click: Tap_Washer">
       loading
     </div>
     <div class="col-xs-4 col-xs-offset-2 dryer" data-bind="text: dryer_time">
