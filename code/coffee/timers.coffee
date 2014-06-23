@@ -30,4 +30,6 @@ define (require) ->
 
     ##Event Bindings
     Tap_Washer: (d, e) =>
+      navigator.notification?.alert "Washer Started", -> return
+      navigator.notification?.beep(2)
       @washer.on !@washer.on()

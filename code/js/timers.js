@@ -45,6 +45,13 @@
       }
 
       Timers_VM.prototype.Tap_Washer = function(d, e) {
+        var _ref, _ref1;
+        if ((_ref = navigator.notification) != null) {
+          _ref.alert("Washer Started", function() {});
+        }
+        if ((_ref1 = navigator.notification) != null) {
+          _ref1.beep(2);
+        }
         return this.washer.on(!this.washer.on());
       };
 
