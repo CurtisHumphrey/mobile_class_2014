@@ -9,16 +9,22 @@ requirejs.config
     knockout_hammer: "../../bower_components/knockout-hammer/knockout-hammer"
     morf: "../../bower_components/kox_morf/morf"
     kox_morf: "../../bower_components/kox_morf/kox_morf"
+    lawnchair: "../../bower_components/kox_lawnchair/lawnchair"
+    lawnchair_sqlite: "../../bower_components/kox_lawnchair/adapters/webkit-sqlite"
+    kox_lawnchair: "../../bower_components/kox_lawnchair/kox_lawnchair"
 
   baseUrl: '/code/js'
   shim:
+    'lawnchair':
+      exports: 'Lawnchair'
+    'lawnchair_sqlite':
+      deps: ['lawnchair']
+      exports: 'Lawnchair'
     'bootstrap':
       deps: ['jquery']
       exports: 'jQuery'
     'morf':
       exports: 'Morf'
-
-
 
 define [
   'knockout'
