@@ -1,6 +1,7 @@
 define (require) ->
   ko = require 'knockout'
   $ = require "jquery"
+  require 'kox_lawnchair'
 
   ToHMM = (minutes) ->
     h = Math.floor minutes / 60
@@ -37,8 +38,17 @@ define (require) ->
       @snooze_options options
 
       @washer_time = ko.observable 40
+        .extend
+          store_locally:
+            key: "washer_time"
       @dryer_time  = ko.observable 60
+        .extend
+          store_locally:
+            key: "dryer_time"
       @snooze_time = ko.observable 10
+        .extend
+          store_locally:
+            key: "snooze_time"
 
       @washer_time.subscribe (nV) -> console.log nV
 

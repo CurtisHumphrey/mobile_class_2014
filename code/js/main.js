@@ -9,7 +9,7 @@
       SETTINGS: "settings",
       TIMERS: "timers"
     };
-    return Main_App = (function() {
+    Main_App = (function() {
       function Main_App() {
         this.Open_Timmers = __bind(this.Open_Timmers, this);
         this.Open_Settings = __bind(this.Open_Settings, this);
@@ -27,6 +27,7 @@
       return Main_App;
 
     })();
+    return new Main_App();
   });
 
 }).call(this);

@@ -15,3 +15,5 @@ define (require) ->
 
     Open_Timmers: (d, e) =>
       @page PAGES.TIMERS
+
+  return new Main_App()

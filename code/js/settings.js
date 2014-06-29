@@ -5,6 +5,7 @@
     var $, Settings_VM, ToHMM, ko;
     ko = require('knockout');
     $ = require("jquery");
+    require('kox_lawnchair');
     ToHMM = function(minutes) {
       var h, m;
       h = Math.floor(minutes / 60);
@@ -45,9 +46,21 @@
           });
         }
         this.snooze_options(options);
-        this.washer_time = ko.observable(40);
-        this.dryer_time = ko.observable(60);
-        this.snooze_time = ko.observable(10);
+        this.washer_time = ko.observable(40).extend({
+          store_locally: {
+            key: "washer_time"
+          }
+        });
+        this.dryer_time = ko.observable(60).extend({
+          store_locally: {
+            key: "dryer_time"
+          }
+        });
+        this.snooze_time = ko.observable(10).extend({
+          store_locally: {
+            key: "snooze_time"
+          }
+        });
         this.washer_time.subscribe(function(nV) {
           return console.log(nV);
         });
