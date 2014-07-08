@@ -2,10 +2,12 @@
   var __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
 
   define(function(require) {
-    var $, Settings_VM, ToHMM, ko;
+    var $, KnockoutFire, Main, Settings_VM, ToHMM, ko;
     ko = require('knockout');
     $ = require("jquery");
     require('kox_lawnchair');
+    KnockoutFire = require('knockoutfire');
+    Main = require('main');
     ToHMM = function(minutes) {
       var h, m;
       h = Math.floor(minutes / 60);
@@ -46,21 +48,14 @@
           });
         }
         this.snooze_options(options);
-        this.washer_time = ko.observable(40).extend({
-          store_locally: {
-            key: "washer_time"
-          }
+        this.settings = KnockoutFire.observable(Main.User_Settings_Ref(), {
+          washer_time: true,
+          dryer_time: true,
+          snooze_time: true
         });
-        this.dryer_time = ko.observable(60).extend({
-          store_locally: {
-            key: "dryer_time"
-          }
-        });
-        this.snooze_time = ko.observable(10).extend({
-          store_locally: {
-            key: "snooze_time"
-          }
-        });
+        this.washer_time = this.settings().washer_time;
+        this.dryer_time = this.settings().dryer_time;
+        this.snooze_time = this.settings().snooze_time;
         this.washer_time.subscribe(function(nV) {
           return console.log(nV);
         });

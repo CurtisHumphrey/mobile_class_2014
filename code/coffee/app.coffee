@@ -12,6 +12,9 @@ requirejs.config
     lawnchair: "../../bower_components/kox_lawnchair/lawnchair"
     lawnchair_sqlite: "../../bower_components/kox_lawnchair/adapters/webkit-sqlite"
     kox_lawnchair: "../../bower_components/kox_lawnchair/kox_lawnchair"
+    firebase: "../../bower_components/firebase/firebase-debug"
+    firebase_login: "../../bower_components/firebase-simple-login/firebase-simple-login"
+    knockoutfire: "../../bower_components/knockoutfire/knockoutfire"
 
   baseUrl: '/code/js'
   shim:
@@ -25,6 +28,10 @@ requirejs.config
       exports: 'jQuery'
     'morf':
       exports: 'Morf'
+    'firebase':
+      exports: "Firebase"
+    'firebase_login':
+      exports: "FirebaseSimpleLogin"
 
 define [
   'knockout'
